@@ -1,6 +1,6 @@
 # VideoMoCo: Contrastive Video Representation Learning with Temporally Adversarial Examples
+Official pytorch implementation of our CVPR 2021 paper [VideoMoCo: Contrastive Video Representation Learning with Temporally Adversarial Examples.](https://arxiv.org/abs/2103.05905)
 # Overview
-
 Given a video sequence as an input sample, we improve the temporal feature representations of MoCo from two perspectives. We introduce generative adversarial learning to improve the temporal robustness of the encoder. We use a generator to temporally drop out several frames from this sample. The discriminator is then learned to encode similar feature representations regardless of frame removals. By adaptively dropping out different frames during training iterations of adversarial learning, we augment this input sample to train a temporally robust encoder. Second, we propose a temporally adversarial decay to model key attenuation in the memory queue when computing the contrastive loss. It largely improves MoCo with temporally robust feature representation for the video-related classification/recognition scenario, which is novel in terms of both temporal representation learning methodology and video scenario.
 <table>
     <tr>
