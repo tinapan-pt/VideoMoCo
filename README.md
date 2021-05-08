@@ -25,7 +25,7 @@ Given a video sequence as an input sample, we improve the temporal feature repre
 
 
 ## Train
-take 100 epochs to train D for initialization, and then train G and D via adversarial learning for the remaining 100 epochs.
+Note that we take 100 epochs to train D for initialization, and then train G and D via adversarial learning for the remaining 100 epochs.
 ```python
 python train.py
 ```
