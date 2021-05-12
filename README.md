@@ -21,7 +21,7 @@ Given a video sequence as an input sample, we improve the temporal feature repre
 ## Data preparation
 
 - Download the Kinetics400 dataset from the [official website](https://deepmind.com/research/open-source/kinetics).
-- Download the original UCF101 dataset from the [official website](https://www.crcv.ucf.edu/data/UCF101.php).
+- Download the UCF101 dataset from the [official website](https://www.crcv.ucf.edu/data/UCF101.php).
 
 
 ## Train
@@ -34,4 +34,4 @@ python train.py
 python eval.py  
 ```
 ## TODO
-- [ ] Visualizations(attention maps)
+- [ ] Visualizations (attention maps)
