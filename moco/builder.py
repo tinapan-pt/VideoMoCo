@@ -268,7 +268,6 @@ class MoCo(nn.Module):
         weight = t ** (1.0 * self.count).cuda()
         weight = torch.mul(self.queue, weight).cuda()
         l_neg = torch.einsum('nc,ck->nk', [q, weight.clone().detach()])
-        # l_neg = (1 + l_neg).pow(3)*l_neg
 
         # logits: Nx(1+K)
         logits = torch.cat([l_pos, l_neg], dim=1)
