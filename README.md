@@ -29,6 +29,9 @@ Note that we take 100 epochs to train D for initialization, and then train G and
 ```python
 python train.py
 ```
+## Pretrained Model
+r2d_18_200epoch: https://drive.google.com/file/d/1-sy2q6kPVP-MLaWNK5dzJT43fSnJgQ5p/view?usp=sharing
+
 ##  Action Recognition Evaluation
 ```python
 python eval.py  
