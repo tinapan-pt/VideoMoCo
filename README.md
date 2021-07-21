@@ -36,5 +36,3 @@ r2d18_200epoch: https://drive.google.com/file/d/1-sy2q6kPVP-MLaWNK5dzJT43fSnJgQ5
 ```python
 python eval.py  
 ```
-## TODO
-- [ ] Visualizations (attention maps)
