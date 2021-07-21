@@ -352,15 +352,15 @@ def train(train_loader, augmentation_gpu, criterion, G_criterion, netG, netD, op
         im_q_fake = netG(video[0])
         q_fake, q_real, output, target = netD(im_q_fake, im_q=video[0], im_k=video[1])
         set_requires_grad([netD], False)  # Ds require no gradients when optimizing Gs
-        optimizer_g.zero_grad()  # set G_A and G_B's gradients to zero
+        optimizer_g.zero_grad()  # set generator's gradients to zero
         loss_g = -100 * G_criterion(q_fake, q_real)
         loss_g.backward(retain_graph=True)
-        optimizer_g.step()  # update generator's weights
         set_requires_grad([netD], True)
         optimizer_d.zero_grad()  # set discriminator's gradients to zero
         loss_d = criterion(output, target)
         loss_d.backward()
-        optimizer_d.step()  # update D_A and D_B's weights
+        optimizer_g.step()  # update generator's weights
+        optimizer_d.step()  # update discriminator's weights
         # acc1/acc5 are (K+1)-way contrast classifier accuracy
         # measure accuracy and record loss
         acc1, acc5 = accuracy(output, target, topk=(1, 5))
