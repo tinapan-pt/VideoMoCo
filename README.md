@@ -27,7 +27,19 @@ Given a video sequence as an input sample, we improve the temporal feature repre
 ## Train
 Note that we take 100 epochs to train D for initialization, and then train G and D via adversarial learning for the remaining 100 epochs.
 ```python
-python train.py
+python train.py \
+  --log_dir $your/log/path\
+  --ckp_dir $your/checkpoint/path\
+  -a r2plus1d_18 \
+  --lr 0.005 \
+  -fpc 32 \
+  -b 32 \
+  -j 128 \
+  --epochs 200 \
+  --schedule  120 160 \
+  --dist_url 'tcp://localhost:10001' --multiprocessing_distributed --world_size 1 --rank 0 \
+  --resume ./checkpoint_0100.pth.tar \
+  $kinetics400/dataset/path
 ```
 
 ## Pretrained Model
