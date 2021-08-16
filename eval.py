@@ -39,7 +39,7 @@ parser.add_argument('--num_class', default=101, type=int,
                     help='number of class')
 parser.add_argument('-j', '--workers', default=32, type=int, metavar='N',
                     help='number of data loading workers (default: 32)')
-parser.add_argument('--epochs', default=100, type=int, metavar='N',
+parser.add_argument('--epochs', default=10, type=int, metavar='N',
                     help='number of total epochs to run')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
                     help='manual epoch number (useful on restarts)')
@@ -48,15 +48,15 @@ parser.add_argument('-b', '--batch-size', default=256, type=int,
                     help='mini-batch size (default: 256), this is the total '
                          'batch size of all GPUs on the current node when '
                          'using Data Parallel or Distributed Data Parallel')
-parser.add_argument('-cs', '--crop_size', default=112, type=int, metavar='N',
+parser.add_argument('-cs', '--crop_size', default=224, type=int, metavar='N',
                     help='crop size for video clip (default: 112)')
-parser.add_argument('-fpc', '--frame_per_clip', default=16, type=int, metavar='N',
+parser.add_argument('-fpc', '--frame_per_clip', default=32, type=int, metavar='N',
                     help='number of frame per video clip (default: 16)')
 parser.add_argument('-sbc', '--step_between_clips', default=1, type=int, metavar='N',
                     help='number of steps between video clips (default: 1)')
 parser.add_argument('-cpv', '--clip_per_video', default=10, type=int, metavar='N',
                     help='number of frame per video clip (default: 10)')
-parser.add_argument('--lr', '--learning-rate', default=30., type=float,
+parser.add_argument('--lr', '--learning-rate', default=0.005, type=float,
                     metavar='LR', help='initial learning rate', dest='lr')
 parser.add_argument('--lr_decay', '--learning-rate_decay', default=0.1, type=float,
                     metavar='LRD', help='learning rate decay', dest='lr_decay')
@@ -64,11 +64,11 @@ parser.add_argument('--warmup', action='store_true',
                     help='use warm up lr schedule')
 parser.add_argument('--wp_lr', '--warmup_learning-rate', default=0.0025, type=float,
                     metavar='WLR', help='initial warmup learning rate', dest='wp_lr')
-parser.add_argument('--schedule', default=[60, 80], nargs='*', type=int,
+parser.add_argument('--schedule', default=[6, 8], nargs='*', type=int,
                     help='learning rate schedule (when to drop lr by a ratio)')
 parser.add_argument('--momentum', default=0.9, type=float, metavar='M',
                     help='momentum')
-parser.add_argument('--wd', '--weight-decay', default=0., type=float,
+parser.add_argument('--wd', '--weight-decay', default=0.0001, type=float,
                     metavar='W', help='weight decay (default: 0.)',
                     dest='weight_decay')
 parser.add_argument('-p', '--print-freq', default=10, type=int,
