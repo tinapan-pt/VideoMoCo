@@ -45,9 +45,32 @@ python train.py \
 ## Pretrained Model
 100 epochs for initialization: https://drive.google.com/file/d/1tE20ZNPg9l882900eXU0HcOc36UtwS5Y/view?usp=sharing
 
-r2d18_200epoch（Acc@1 82.518）: https://drive.google.com/file/d/1DzA5Yn43x9ZuirX2jV8CuhhqCnSYky0x/view?usp=sharing
+r2d18_200epoch（UCF101 Acc@1 82.518）: https://drive.google.com/file/d/1DzA5Yn43x9ZuirX2jV8CuhhqCnSYky0x/view?usp=sharing
 
 ##  Action Recognition Evaluation
 ```python
 python eval.py  
+```
+## Acknowledgement
+Our code is based on the implementation of "MoCo: Momentum Contrast for Unsupervised Visual Representation Learning" (See the citation below), including the implementation of the momentum encoder and queue. If you use our code, please also cite their work as below.
+
+## Citation
+If our code is helpful to your work, please cite:
+```
+@inproceedings{pan2021videomoco,
+  title={Videomoco: Contrastive video representation learning with temporally adversarial examples},
+  author={Pan, Tian and Song, Yibing and Yang, Tianyu and Jiang, Wenhao and Liu, Wei},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={11205--11214},
+  year={2021}
+}
+```
+```
+@inproceedings{he2020momentum,
+  title={Momentum contrast for unsupervised visual representation learning},
+  author={He, Kaiming and Fan, Haoqi and Wu, Yuxin and Xie, Saining and Girshick, Ross},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={9729--9738},
+  year={2020}
+}
 ```
