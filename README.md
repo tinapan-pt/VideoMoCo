@@ -45,7 +45,7 @@ python train.py \
 ## Pretrained Model
 100 epochs for initialization: https://drive.google.com/file/d/1tE20ZNPg9l882900eXU0HcOc36UtwS5Y/view?usp=sharing
 
-r2d18_200epoch: https://drive.google.com/file/d/1DzA5Yn43x9ZuirX2jV8CuhhqCnSYky0x/view?usp=sharing
+r2d18_200epoch（Acc@1 82.518）: https://drive.google.com/file/d/1DzA5Yn43x9ZuirX2jV8CuhhqCnSYky0x/view?usp=sharing
 
 ##  Action Recognition Evaluation
 ```python
