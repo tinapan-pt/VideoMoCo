@@ -49,6 +49,8 @@ parser.add_argument('-b', '--batch_size', default=256, type=int,
                     help='mini-batch size (default: 256), this is the total '
                          'batch size of all GPUs on the current node when '
                          'using Data Parallel or Distributed Data Parallel')
+parser.add_argument('-t', '--temporal_decay', default=0.99999, type=float, metavar='N',
+                    help='values of temporal decay (default: 0.99999)')
 parser.add_argument('-cs', '--crop_size', default=112, type=int, metavar='N',
                     help='crop size for video clip (default: 112)')
 parser.add_argument('-fpc', '--frame_per_clip', default=16, type=int, metavar='N',
@@ -350,7 +352,7 @@ def train(train_loader, augmentation_gpu, criterion, G_criterion, netG, netD, op
         video[0] = augmentation_gpu(video[0])
         video[1] = augmentation_gpu(video[1])
         im_q_fake = netG(video[0])
-        q_fake, q_real, output, target = netD(im_q_fake, im_q=video[0], im_k=video[1])
+        q_fake, q_real, output, target = netD(im_q_fake, im_q=video[0], im_k=video[1], t=args.temporal_decay)
         set_requires_grad([netD], False)  # Ds require no gradients when optimizing Gs
         optimizer_g.zero_grad()  # set generator's gradients to zero
         loss_g = -100 * G_criterion(q_fake, q_real)
